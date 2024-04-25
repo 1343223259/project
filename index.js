@@ -28,6 +28,9 @@ const Barrage = class {
         this.propsId = Object.keys(document.querySelector('.webcast-chatroom___list'))[1]
         this.chatDom = document.querySelector('.webcast-chatroom___items').children[0]
         this.roomJoinDom = document.querySelector('.webcast-chatroom___bottom-message')
+        console.log(propsId,".webcast-chatroom___list")
+        console.log(chatDom,"..webcast-chatroom___items")
+        console.log(roomJoinDom,".webcast-chatroom___bottom-message")
         this.ws = new WebSocket(this.wsurl)
         this.ws.onclose = this.wsClose
         this.ws.onopen = () => {
@@ -37,15 +40,18 @@ const Barrage = class {
 
     // 消息事件 , join, message
     on(e, cb) {
+        console.log(1)
         this.eventRegirst[e] = true
         this.event[e] = cb
     }
     openWs() {
+        console.log(2)
         console.log(`[${new Date().toLocaleTimeString()}]`, '服务已经连接成功!')
         clearInterval(this.timer)
         this.runServer()
     }
     wsClose() {
+        console.log(3)
         console.log('服务器断开')
         if (this.timer !== null) {
             return
@@ -65,6 +71,7 @@ const Barrage = class {
         }, this.timeinterval)
     }
     runServer() {
+        console.log(4)
         let _this = this
         if (this.option.join) {
             console.log(mutation,"mutation")
@@ -110,6 +117,7 @@ const Barrage = class {
         this.chatObserverrom.observe(this.chatDom, { childList: true });
     }
     getUser(user) {
+        console.log(5)
         if (!user) {
             return
         }
@@ -128,6 +136,7 @@ const Barrage = class {
         return msg
     }
     getLevel(arr, type) {
+        console.log(6)
         console.log(arr, type,"等级")
         if (!arr || arr.length === 0) {
             return 0
@@ -142,6 +151,7 @@ const Barrage = class {
         }
     }
     messageParse(dom) {
+        console.log(7)
         console.log(dom,"消息")
         if (!dom[this.propsId].children.props.message) {
             return null
