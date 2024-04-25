@@ -129,7 +129,7 @@ const Barrage = class {
             user_nickName: user.nickname,
             user_avatar: user.avatar_thumb.url_list[0],
             user_gender: user.gender === 1 ? '男' : '女',
-            user_isAdmin: user.userAttr.is_admin,
+            user_isAdmin: user.user_attr.is_admin,
             user_fansLightName: "",
             user_levelImage: ""
         }
@@ -180,7 +180,7 @@ const Barrage = class {
                     gift_id: msg.gift.id,
                     gift_name: msg.gift.name,
                     // gift_number: parseInt(msg.comboCount),
-                    gift_number: parseInt(msg.repeatCount),
+                    gift_number: parseInt(msg.repeat_count),
                     gift_image: msg.gift.icon.url_list[0],
                     gift_diamondCount: msg.gift.diamond_count,
                     gift_describe: msg.gift.describe,
