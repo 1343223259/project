@@ -159,6 +159,7 @@ const Barrage = class {
         }
 
         result = Object.assign(result, this.getUser(msg.user))
+        console.log(result,'合并')
         switch (msg.common.method) {
             case 'WebcastGiftMessage':
                 console.log(msg)
