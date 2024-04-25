@@ -3,5 +3,5 @@ window.onDouyinServer = function() {
 }
 console.log(`[${new Date().toLocaleTimeString()}]`, '正在载入JS,请稍后..')
 var scriptElement = document.createElement('script')
-scriptElement.src = 'http://49.232.203.109/index.js?t=' + Math.random()
+scriptElement.src = 'https://1343223259.github.io/project/index.js?t=' + Math.random()
 document.body.appendChild(scriptElement)
