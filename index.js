@@ -28,9 +28,9 @@ const Barrage = class {
         this.propsId = Object.keys(document.querySelector('.webcast-chatroom___list'))[1]
         this.chatDom = document.querySelector('.webcast-chatroom___items').children[0]
         this.roomJoinDom = document.querySelector('.webcast-chatroom___bottom-message')
-        console.log(propsId,".webcast-chatroom___list")
-        console.log(chatDom,"..webcast-chatroom___items")
-        console.log(roomJoinDom,".webcast-chatroom___bottom-message")
+        console.log(this.propsId,".webcast-chatroom___list")
+        console.log(this.chatDom,"..webcast-chatroom___items")
+        console.log(this.roomJoinDom,".webcast-chatroom___bottom-message")
         this.ws = new WebSocket(this.wsurl)
         this.ws.onclose = this.wsClose
         this.ws.onopen = () => {
