@@ -184,6 +184,7 @@ const Barrage = class {
                 })
                 break
         }
+        console.log(result,'数据')
         return result
     }
 }
