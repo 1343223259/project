@@ -67,6 +67,7 @@ const Barrage = class {
     runServer() {
         let _this = this
         if (this.option.join) {
+            console.log(mutation,"mutation")
             this.observer = new MutationObserver((mutationsList) => {
                 for (let mutation of mutationsList) {
                     if (mutation.type === 'childList' && mutation.addedNodes.length) {
@@ -127,6 +128,7 @@ const Barrage = class {
         return msg
     }
     getLevel(arr, type) {
+        console.log(arr, type,"等级")
         if (!arr || arr.length === 0) {
             return 0
         }
@@ -140,10 +142,12 @@ const Barrage = class {
         }
     }
     messageParse(dom) {
+        console.log(dom,"消息")
         if (!dom[this.propsId].children.props.message) {
             return null
         }
         let msg = dom[this.propsId].children.props.message.payload
+        console.log(msg,"消息2")
         let result = {
             repeatCount: null,
             gift_id: null,
