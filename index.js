@@ -87,7 +87,7 @@ const Barrage = class {
                         if (this.eventRegirst.join) {
                             this.event['join'](msg)
                         }
-                        this.ws.send();
+                        this.ws.send(JSON.stringify({ action: 'join', message: msg }));
                     }
                 }
             });
@@ -108,7 +108,7 @@ const Barrage = class {
                             if (_this.option.message === false && !message.isGift) {
                                 return
                             }
-                            this.ws.send();
+                            this.ws.send(JSON.stringify({ action: 'message', message: message }));
                         }
                     }
                 }
